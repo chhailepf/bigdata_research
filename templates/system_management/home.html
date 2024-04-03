@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +8,23 @@
 </head>
 <body>
     <label>batch upload</label>
-    <input type="file" id="file" accept=".csv , .xlsx , .xls" ><br><br><br><br><br>
+    <input type="file" id="csv_input" accept=".csv , .xlsx , .xls" ><br><br><br><br><br>
     <button id="upload">upload</button>
 </body>
+ 
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+ 
+    const IDENTITY_POOL_REGION = "{{ IDENTITY_POOL_REGION }}";
+    const IDENTITY_POOL_ID = "{{ IDENTITY_POOL_ID }}";
+    const OBJECT_KEY = "{{ OBJECT_KEY }}";
+    const BUCKET_NAME = "{{ BUCKET_NAME }}";
+    const BUCKET_REGION = "{{ BUCKET_REGION}}";
+ 
+   
+</script>
+ 
+<script src='{% static "js/upload.js" %}'></script>
 </html>
